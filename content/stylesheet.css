@@ -1,0 +1,58 @@
+/* Reset */
+/* Reset all white-space to 0 for consistency across browsers */
+* { margin: 0px; padding: 0px; }
+
+/* Default to some sans-serif font at a specific size */
+html { font-size: 62.5%; }
+body { font-family: Arial, Helvetica, sans-serif; font-size: 1.8em; }
+h1, h2, h3, h4, h5, h6 { font-family: Georgia, serif; }
+pre { font: 0.8em Monaco, monospace; margin: 0 0 1em 1em; }
+
+/* Put some padding back onto our list elements */
+ul, ol { margin-left: 10px; }
+li  { margin-left: 10px; padding-left: 10px; }
+
+/* Bye bye ugly blue border */
+a img { border: 0px; }
+
+/* No dots around clicked links */
+a, a:active { outline: none; }
+
+/* HTML5 tags */
+header, section, footer, aside, nav, article, figure { display: block; }
+
+/* Markup */
+body {
+  line-height: 1.5;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+a { color: #055580; }
+a:hover { text-decoration: none; }
+time { color: grey; }
+
+h1 { font-size: 1.7em; }
+h2 { font-size: 1.3em; }
+h1 a, h2 a { text-decoration: none; }
+h1 a:hover, h2 a:hover { text-decoration: underline; }
+h1, h2 { margin-bottom: 0.5em; }
+h2 { margin-top: 0.5em; }
+
+p { margin: 1em 0; line-height: 1.4em; }
+
+/* Header/Footer */
+
+header { padding: 1em 0; }
+footer { text-align: center; margin-top: 2em; }
+
+/* Definition lists */
+dt { font-weight: bold }
+dd { padding-bottom: 1em; padding-left: 1em; }
+
+header { position: relative; } /* to make photo relative to header borders ;) */
+#contactsList { list-style-type: circle; }
+#description { color: gray; font-size: 0.7em; padding-left: 1.5em; }
+#photo { position: absolute; top: 1em; right: 2em; }
+.icon { float: left; padding-right: 0.3em; }
+.contact-name { font-weight: bold; }

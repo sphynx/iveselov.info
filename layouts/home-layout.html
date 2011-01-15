@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="author" content="Ivan Veselov">
+  <meta name="keywords" content="ivan veselov, dying_sphynx, sphynx, haskell, algorithms">
+  <meta name="description" content="Home page of Ivan Veselov aka dying_sphynx">
+
+  <link rel="stylesheet" href="/static/style.css">
+
+  <!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  
+  <title><%= @item[:title] %></title>
+
+  <link rel="openid.server" href="http://www.myopenid.com/server">
+  <link rel="openid.delegate" href="http://ivan.veselov.myopenid.com/">
+  <link rel="openid2.local_id" href="http://ivan.veselov.myopenid.com/">
+  <link rel="openid2.provider" href="http://www.myopenid.com/server">
+</head>
+
+<body>
+  <header>
+    <h1>Ivan Veselov</h1>
+    <h2 id="description"> a software developer, chess player, geek and traveller</h2>
+    <img src="/static/myself.jpg" id="photo"/>
+  </header>
+
+  <%= yield %>
+
+  <footer>
+    &#169; 2011 Ivan Veselov
+  </footer>
+
+</body>
+</html>
