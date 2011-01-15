@@ -47,8 +47,8 @@ header { padding: 1em 0; }
 footer { text-align: center; margin-top: 2em; }
 
 /* Definition lists */
-dt { font-weight: bold }
-dd { padding-bottom: 1em; padding-left: 1em; }
+dt { font-weight: bold; }
+dd { padding-bottom: 1em; padding-left: 2.5em; }
 
 header { position: relative; } /* to make photo relative to header borders ;) */
 #contactsList { list-style-type: circle; }
