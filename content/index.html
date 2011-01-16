@@ -79,7 +79,7 @@ $.getJSON("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=dyin
               var container = $("#last-tweet");
               container.html($("<time>")
                                .attr("datetime", date.toISOString())
-                               .html(date.toDateString()));
+                               .html(date.toDateString().substr(3)));
               container.append(" ");
               container.append($("<a>").attr("href", url).html(tweets[0].text));
           });
