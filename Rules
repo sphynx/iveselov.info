@@ -27,18 +27,9 @@ route '/stylesheet/' do
   '/static/style.css'
 end
 
-route '/images/square32/*/' do
-  # /images/some_image/ -> /static/some_image.jpg or /static/some_image.png or so
-  '/static/' + item.identifier.split('/').last + '.' + item[:extension]
-end
-
-route '/images/unique/*' do
-  # /images/some_image/ -> /static/some_image.jpg or /static/some_image.png or so
-  '/static/' + item.identifier.split('/').last + '.' + item[:extension]
-end
-
 route '/images/*/' do
-  nil
+  # /images/some_image/ -> /static/some_image.jpg or /static/some_image.png or so
+  '/static/' + item.identifier.split('/').last + '.' + item[:extension]
 end
 
 route '*' do
