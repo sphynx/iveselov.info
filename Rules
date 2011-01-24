@@ -18,6 +18,10 @@ compile '/images/*/' do
   # don't filter or layout
 end
 
+compile '/cv/' do
+  # don't filter or layout
+end
+
 compile '*' do
   filter :erb
   layout 'home-layout'
