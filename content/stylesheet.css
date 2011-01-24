@@ -1,4 +1,3 @@
-/* Reset */
 /* Reset all white-space to 0 for consistency across browsers */
 * { margin: 0px; padding: 0px; }
 
@@ -43,7 +42,7 @@ p { margin: 1em 0; line-height: 1.4em; }
 
 /* Header/Footer */
 
-header { padding: 1em 0; }
+header { padding: 1em 0; height: 150px; }
 footer { text-align: center; margin-top: 2em; }
 
 /* Definition lists */
@@ -56,3 +55,6 @@ header { position: relative; } /* to make photo relative to header borders ;) */
 #photo { position: absolute; top: 1em; right: 2em; }
 .icon { float: left; padding-right: 0.3em; }
 .contact-name { font-weight: bold; }
+
+#worldmap { margin-top: 1em; }
+.note { color: gray; font-size: 0.8em; }
