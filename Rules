@@ -28,7 +28,11 @@ compile '*' do
 end
 
 route '/stylesheet/' do
-  '/static/style.css'
+  '/static/main.css'
+end
+
+route '/images/favicon/' do
+  '/favicon.ico'
 end
 
 route '/images/*/' do
