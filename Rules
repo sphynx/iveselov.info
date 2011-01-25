@@ -22,6 +22,10 @@ compile '/rose-script/' do
   # don't filter or layout
 end
 
+compile '/rscript-min/' do
+  # don't filter or layout
+end
+
 compile '/images/*/' do
   # don't filter or layout
 end
@@ -43,7 +47,11 @@ route '/rose/' do
   '/static/rose.css'
 end
 
-route '/rose-script/' do
+# route '/rose-script/' do
+#   '/static/rose.js'
+# end
+
+route '/rscript-min/' do
   '/static/rose.js'
 end
 

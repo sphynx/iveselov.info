@@ -1,4 +1,4 @@
-const DICE_NUMBER = 5;
+var DICE_NUMBER = 5;
 var lastDice = [];
 
 function getRandomBetween(a, b) {
