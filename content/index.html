@@ -21,8 +21,9 @@ icon_size: 32
   <dt>
     <img src="/static/lastfm_<%= @item[:icon_size] %>.png" class="icon"/>
     <a href="http://www.last.fm/user/dying_sphynx" title="Last.fm">Last.fm</a></dt>
-  <dd>You might check whether we share any music preferences! <br/>
-      Last week Top-5: <span id="last-song">loading...</span></dd>
+  <dd>You might check whether we share any music preferences! 
+      <!-- <br/>Last week Top-5: <span id="last-song">loading...</span> -->
+  </dd>
 
   <dt>
     <img src="/static/picasa_<%= @item[:icon_size] %>.png" class="icon"/>
@@ -106,6 +107,9 @@ $.getJSON("http://api.twitter.com/1/users/show.json?screen_name=dying_sphynx&cal
               $("#twitter-readers").text(info.followers_count);
           });
 
+/* commented as it has ceased to work for now. TODO: figure out what's
+   wrong with Last.fm webservices.
+      
 // Last.FM top artists
 var user = "dying_sphynx";
 var api_code = "c259d1e967ce6249210ef9f230f1243d";
@@ -122,4 +126,5 @@ $.getJSON(url,
               var top_names = jQuery.map(top_artists, function (a) { return a.name; });
               $("#last-song").text(top_names.join(", "));
           });
+*/
 </script>
