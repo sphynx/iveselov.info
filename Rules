@@ -18,6 +18,9 @@ compile '/rose/' do
   # don't filter or layout
 end
 
+compile '/docbook-xsl/' do
+end
+
 compile '/rose-script/' do
   # don't filter or layout
 end
@@ -34,6 +37,11 @@ compile '/cv/' do
   # don't filter or layout
 end
 
+compile '/xmonad/' do
+  # don't filter or layout
+end
+
+
 compile '*' do
   filter :erb
   layout 'home-layout'
@@ -45,6 +53,10 @@ end
 
 route '/rose/' do
   '/static/rose.css'
+end
+
+route '/docbook-xsl/' do
+  '/static/docbook-xsl.css'
 end
 
 # route '/rose-script/' do
