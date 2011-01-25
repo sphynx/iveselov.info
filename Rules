@@ -14,6 +14,14 @@ compile '/stylesheet/' do
   # don't filter or layout
 end
 
+compile '/rose/' do
+  # don't filter or layout
+end
+
+compile '/rose-script/' do
+  # don't filter or layout
+end
+
 compile '/images/*/' do
   # don't filter or layout
 end
@@ -29,6 +37,14 @@ end
 
 route '/stylesheet/' do
   '/static/main.css'
+end
+
+route '/rose/' do
+  '/static/rose.css'
+end
+
+route '/rose-script/' do
+  '/static/rose.js'
 end
 
 route '/images/favicon/' do
