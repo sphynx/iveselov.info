@@ -29,6 +29,7 @@ body {
 
 a { color: #055580; }
 a:hover { text-decoration: none; }
+#myname a { color: #000000; }
 time { color: grey; }
 
 h1 { font-size: 1.7em; }
