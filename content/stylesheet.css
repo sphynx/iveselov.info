@@ -29,7 +29,6 @@ body {
 
 a { color: #055580; }
 a:hover { text-decoration: none; }
-#myname a { color: #000000; }
 time { color: grey; }
 
 h1 { font-size: 1.7em; }
@@ -41,10 +40,15 @@ h2 { margin-top: 0.5em; }
 
 p { margin: 1em 0; line-height: 1.4em; }
 
-/* Header/Footer */
 
+/* Header/Footer */
 header { padding: 1em 0; height: 150px; }
 footer { text-align: center; margin-top: 2em; }
+
+/* Name/description */
+#myname a { color: #000000; }
+#myname { font-size: 2em; margin-top: 0.5em; margin-bottom: 0em; }
+#description { color: gray; font-size: 0.7em; }
 
 /* Definition lists */
 dt { font-weight: bold; }
@@ -52,7 +56,6 @@ dd { padding-bottom: 1em; padding-left: 3.4em; font-size: 0.8em; }
 
 header { position: relative; } /* to make photo relative to header borders ;) */
 #contactsList { list-style-type: circle; }
-#description { color: gray; font-size: 0.7em; padding-left: 1.5em; }
 #photo { position: absolute; top: 1em; right: 2em; }
 .icon { float: left; padding-right: 0.3em; }
 .contact-name { font-weight: bold; }
