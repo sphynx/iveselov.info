@@ -1,9 +1,10 @@
---- 
+---
 title: Petals Around the Rose
+description: A small game/puzzle implementation which has tricked even Bill Gates ;)
 ---
 
-<script src="/static/rose.js"></script>
-    
+<script src="/js/rose-min.js"></script>
+
 <h3>Petals around the rose</h3>
 
 <article>
@@ -28,22 +29,22 @@ title: Petals Around the Rose
 
 <div id="puzzle">
   <div id="dicebox"></div>
-  
+
   <div id="control">
     <div class="eldiv"><strong>Your guess</strong><input type="text" id="guess" value="0"/></div>
     <div class="eldiv"><strong>Correct answer</strong><span id="result"></span></div>
-    
+
     <div id="resultbox">
       <img id="checkImg" src="/static/check.png"/>
       <img id="crossImg" src="/static/cross.png"/>
     </div>
-    
+
     <div id="buttons">
       <button id="btnRoll" onClick="roll()">Roll</button>
       <button id="btnCheck" onClick="check()">Check</button>
     </div>
   </div>
-  
+
 </div>
 
 <p>

@@ -1,3 +1,6 @@
-output/
-tmp/
+_cache/
+_site/
+*.hi
+*.o
+hakyll
 \#*#

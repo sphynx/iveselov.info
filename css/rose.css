@@ -1,0 +1,36 @@
+#puzzle { border: 3px dashed #D3D3D3; padding: 1em; margin: 2em 0 2em 0; }
+
+#dicebox { height: 65px; margin-bottom: 1em; }
+#dicebox span { float: left; height: 60px; width: 60px; }
+
+#control { position: relative; }
+
+#guess { position: absolute; right: 65%; width: 30px;}
+#result { position: absolute; right: 65%; font-size: 1.6em; color: gray;}
+
+.eldiv { padding: 10px; }
+
+#resultbox { float: right;}
+#checkImg { display: none; }
+#crossImg { display: none; }
+
+/* Buttons */
+#buttons { margin-top: 1em; }
+button { width: 120px;
+         font-weight: bold;
+         font-size: 1.2em;
+         border: 1px solid #D3D3D3;
+         color: #555555;
+         outline: medium none;
+         margin-left: 1em;
+         padding: 7px;
+         -moz-border-radius: 4px 4px 4px 4px;
+       }
+
+/* Dice images (1-6) */
+.die1 { background: url("/static/die1.png") center; }
+.die2 { background: url("/static/die2.png") center; }
+.die3 { background: url("/static/die3.png") center; }
+.die4 { background: url("/static/die4.png") center; }
+.die5 { background: url("/static/die5.png") center; }
+.die6 { background: url("/static/die6.png") center; }

@@ -1,0 +1,306 @@
+Ivan Veselov
+============
+
+e-mail: mailto:veselov@gmail.com[]
+
+phone: +380 93 5480384
+
+Professional Summary
+--------------------
+
+A progressive developer interested in functional programming,
+algorithms design and analysis, parsing techniques and computer
+science in general. Has the knowledge of different programming
+paradigms, practical functional programming experience in Haskell. Has
+developed enterprise applications using J2EE architecture, various
+transformation systems and rich internet applications based on Flex
+technology. Eager to learn about new technologies and approaches, is
+productive in research tasks requiring an intellectual effort.
+
+Personal Information
+--------------------
+
+Date of birth: April 23th, 1984
+
+Marital status: unmarried, no children
+
+Languages: Russian -- native, Ukrainian -- excellent, English --
+advanced (IELTS certificate: 8.0 / 9).
+
+Technical Skills
+----------------
+
+.Programming Languages
+
+Java, Haskell
+
+.Software Technologies
+
+- J2EE: JSP, Servlets, EJB, Struts
+- Data access: JPA, SQL, ORM (Hibernate)
+- Parsing: ANTLR, Combinator-based parsing (Parsec, UU parsing lib)
+- XML: XPath, XML Schema, XSLT
+- Adobe Flex
+
+.Development Tools
+
+- Java: Eclipse, Sun JDK, Ant, JUnit
+- J2EE application servers: JBoss
+- Haskell: GHC, Parsec, QuickCheck
+- Parsing tools: ANTLR, JavaCC, Haskell Parsec
+- Source transformation tool: TXL
+- Version control: Subversion, Mercurial, Git
+- C#: MS Visual Studio
+- UNIX tools and editors: shell scripting, standard POSIX tools,
+  Emacs
+
+.Operating Systems
+
+Linux, Windows
+
+.Miscellaneous
+
+- Object oriented programming
+- Theoretical aspects of functional programming
+- Algorithms analysis/design
+- Design patterns (GOF)
+
+Work Experience
+---------------
+
+August 2011 - Present
+~~~~~~~~~~~~~~~~~~~~~
+
+_Haskell Developer_ -- Barclays Capital/EPAM Systems, Kyiv, Ukraine
+
+FPF Project
+^^^^^^^^^^^
+
+Developing function domain specific language and a set of supporting
+tools for describing exotic options.
+
+July 2008 - August 2011
+~~~~~~~~~~~~~~~~~~~~~~~
+
+_Senior Software Developer_ -- EPAM Systems, Kyiv, Ukraine.
+
+Business continuity planning tool
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A tool for business risc controlling and management. The server side is
+implemented using Java Enterprise technologies: EJB3, JPA/Hibernate,
+WebServices. The client side is based on Flex framework which communicates with the
+server side using BlazeDS.
+
+Responsibilities:
+
+- Coordination of work of a small team, responsible for the implementation of
+  particular requirements
+
+- Coding business logic in EJB
+
+- Implementation of the authentication system
+
+February 2007 - July 2008
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+_Software Developer_, _Compiler Specialist_ -- SharpStyle Labs, New York, USA.
+Remote job.
+
+Content review RIA
+^^^^^^^^^^^^^^^^^^
+
+Flex-based rich internet application (http://reviewbasics.com[]) for
+gathering feedback, reviewing and annotating different types of content (images,
+video, documents) which is used in marketing research activities. Reporting
+subsystem provides visual reports representing gathered data. Server side is
+implemented using .NET technology and MSSQL database, data is accessed through
+web services from Flex clients.
+
+Responsibilities:
+
+- Client side architecture design and its implementation using Flex technology
+and ActionScript 3.0 language
+
+- Reporting system modification and support
+
+- Implementation of simple graphics editor for drawing comments
+
+MS Visual Studio Plug-in for ActionScript development
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Visual Studio 2005 plug-in providing IntelliSense™, code highlighting
+and completion, integration with Team Foundation System for ActionScript
+developers.
+
+Responsibilities:
+
+- Development of flexible code completion system in C#
+
+- Creation of ActionScript 3.0 ANTLR grammar
+
+- Lexical and syntactic analysis of ActionScript code based on
+ANTLR
+
+April 2006 - February 2007
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+_Software Developer_ -- Yariserv, partner of Xitec Software (London, UK), Kiev,
+Ukraine
+
+Cobol to J2EE/.NET transformation system
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+System's main purpose is to translate code of old IBM mainframes Cobol-based
+frameworks (IDMS, etc.) to J2EE and .NET code based on Java and C# languages.
+Translation is done using XML techniques -- XSLT, XPath. XML is used as language
+for the intermediate representation of code between Cobol and Java.
+Representation layer and DB records and structure are converted as well.
+
+Responsibilities:
+
+- Developing a set of rules for the translation
+
+- Support of Eclipse plug-in which provides a framework for running
+transformations
+
+- Implementation of WinForms application for easy running "Cobol -> .NET"
+  transformation
+
+February 2005 – April 2006
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+_Software Developer_, Top Spin, regional department of CyberVision Inc., Kiev,
+Ukraine
+
+Communications Convergence Engine (CCE)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A software platform that enables wireline and wireless operators to rapidly
+deploy new services, build subscriber loyalty, improve efficiencies and reach
+new markets. Consist of two products -- ContentManager and ServiceBroker that
+seamlessly operate over the network. System's back-end is based on EJB
+technology (Session Beans, both stateless and stateful). Web part of CCE project
+is based on CCE's own web-framework and Servlets technology. Project communicate
+with several external systems using adapters using Message Driven Bean
+technology, JAXP, JAXB, CORBA. Oracle 9 Database.
+
+Responsibilities:
+
+- Design and implementation of new GUI (WebUI) features based on existing
+framework
+
+- Modification of existing framework to implement functionality according to
+customer's requirements
+
+- Development of utility tools and scripts for build, deploy, run and code
+delivery automation
+
+Document flow automation system
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Software platform that intended for document flow automation tasks of a
+company during projects' creation and management. Platform is J2EE-based and
+uses JSP, BEA PageFlow controllers, BEA DB controllers and WebLogic application
+server.
+
+Responsibilities:
+
+- Investigation and modification of project's web interface
+
+- Working with reports subsystem (report generation from XML into different
+formats -- HTML, Excel (with charts and extensive formatting) and PDF by using
+XSL-FO)
+
+September 2004 – February 2005
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+_Web Developer_, Mnemosoft Ukraine, Kiev, Ukraine
+
+Content Management System
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The system for web content management. It used PHP as core language
+and MySQL as database.
+
+Responsibilities:
+
+- Design database structure (MySQL)
+
+- Business logic implementation
+
+- User interface creation
+
+Open source projects participation
+----------------------------------
+
+.xmonad (http://xmonad.org)
+
+xmonad is a dynamically tiling X11 window manager that is written and configured
+in Haskell.
+
+Role: Contributor. Implemented several extensions for layout transformations, window
+management, etc.
+
+Language: Haskell.
+
+.xmobar (http://code.google.com/p/xmobar/)
+
+xmobar - a minimalistic text based status bar
+
+Role: Contributor. Implemented modules for reading and displaying mailbox status.
+
+Language: Haskell.
+
+.wifi-select (https://github.com/sphynx/wifi-select/)
+
+A tool for selecting wifi networks in console (for ArchLinux).
+
+Role: Author. Created a package for ArchLinux. The package has been included in
+official ArchLinux repositories.
+
+Language: Shell script.
+
+.allknow (http://hg.horna.org.ua/allknow/)
+
+Instant messaging history analyzer.
+
+Role: Author.
+
+Language: Haskell.
+
+.SICP wiki (http://sicp.org.ua)
+
+Educational/social project. A wiki dedicated to the book "Structure and
+Interpretation of Computer Programs", contains programming exercises and
+solutions filled by users. Currently the wiki has near 2000 visits per month.
+
+Role: Author. Created the wiki, organized the community around it.
+
+Education
+---------
+
+.National Technical University of Ukraine “Kyiv Polytechnic Institute” (2001 -- 2007)
+
+- Bachelor Degree in Applied Mathematics
+
+- Specialist Degree in Applied Mathematics
+
+Teaching
+--------
+
+.GlobalLogic G-club (January -- August, 2009)
+
+- Algorithm design and implementation lectures course, based on corresponding MIT
+  course 6.046. CLRS (Cormen, Leiserson, Rivest, Stein. "Introduction to algorithms") is
+  used as a textbook. 10-15 students. 23 lectures.
+
+Talks
+-----
+.St. Petersburg Haskell User Group, November 2007
+
+Pickler combinators in Haskell (about combinatoric approach to data
+serialization).
+
+http://spbhug.folding-maps.org/wiki/PicklerCombinators
+(Slides in Russian)
