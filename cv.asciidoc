@@ -32,27 +32,26 @@ Technical Skills
 
 .Programming Languages
 
-Java, Haskell
+Haskell, Java
+
+.Development Tools
+
+- Haskell: GHC, Parsec, QuickCheck
+- Java: Eclipse, Sun JDK, Ant, JUnit
+- UNIX tools and editors: shell scripting, standard POSIX tools,
+  Emacs
+- J2EE application servers: JBoss
+- Parsing tools: ANTLR, JavaCC, Parsec
+- Source transformation tool: TXL
+- Version control: Subversion, Mercurial, Git, Perforce
 
 .Software Technologies
 
 - J2EE: JSP, Servlets, EJB, Struts
-- Data access: JPA, SQL, ORM (Hibernate)
 - Parsing: ANTLR, Combinator-based parsing (Parsec, UU parsing lib)
+- Data access: SQL, ORM (Hibernate)
 - XML: XPath, XML Schema, XSLT
-- Adobe Flex
-
-.Development Tools
-
-- Java: Eclipse, Sun JDK, Ant, JUnit
-- J2EE application servers: JBoss
-- Haskell: GHC, Parsec, QuickCheck
-- Parsing tools: ANTLR, JavaCC, Haskell Parsec
-- Source transformation tool: TXL
-- Version control: Subversion, Mercurial, Git
-- C#: MS Visual Studio
-- UNIX tools and editors: shell scripting, standard POSIX tools,
-  Emacs
+- GUI: Adobe Flex
 
 .Operating Systems
 
@@ -64,6 +63,7 @@ Linux, Windows
 - Theoretical aspects of functional programming
 - Algorithms analysis/design
 - Design patterns (GOF)
+- Basics of finance, derivatives
 
 Work Experience
 ---------------
@@ -76,7 +76,7 @@ _Haskell Developer_ -- Barclays Capital/EPAM Systems, Kyiv, Ukraine
 FPF Project
 ^^^^^^^^^^^
 
-Developing function domain specific language and a set of supporting
+Developing functional domain specific language and a set of supporting
 tools for describing exotic options.
 
 July 2008 - August 2011
@@ -107,6 +107,22 @@ February 2007 - July 2008
 _Software Developer_, _Compiler Specialist_ -- SharpStyle Labs, New York, USA.
 Remote job.
 
+MS Visual Studio Plug-in for ActionScript development
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Visual Studio 2005 plug-in providing IntelliSense™, code highlighting
+and completion, integration with Team Foundation System for ActionScript
+developers.
+
+Responsibilities:
+
+- Development of flexible code completion system in C#
+
+- Creation of ActionScript 3.0 ANTLR grammar
+
+- Lexical and syntactic analysis of ActionScript code based on
+ANTLR
+
 Content review RIA
 ^^^^^^^^^^^^^^^^^^
 
@@ -125,22 +141,6 @@ and ActionScript 3.0 language
 - Reporting system modification and support
 
 - Implementation of simple graphics editor for drawing comments
-
-MS Visual Studio Plug-in for ActionScript development
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Visual Studio 2005 plug-in providing IntelliSense™, code highlighting
-and completion, integration with Team Foundation System for ActionScript
-developers.
-
-Responsibilities:
-
-- Development of flexible code completion system in C#
-
-- Creation of ActionScript 3.0 ANTLR grammar
-
-- Lexical and syntactic analysis of ActionScript code based on
-ANTLR
 
 April 2006 - February 2007
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
