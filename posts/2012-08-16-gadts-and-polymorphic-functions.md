@@ -11,7 +11,7 @@ post.
 
 Let's start with some contrived example and say we want to have default
 values for certain types. We can use typeclasses for this, but let's
-proceed with GADTs:
+proceed with [GADTs](http://en.wikibooks.org/wiki/Haskell/GADT):
 
 ~~~{.haskell}
 {-# LANGUAGE GADTs #-}
