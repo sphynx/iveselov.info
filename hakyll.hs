@@ -8,7 +8,7 @@ import System.FilePath
 main :: IO ()
 main = hakyllWith config $ do
 
-  -- Copy images
+    -- Copy images
     match "images/*" $ do
         route $ gsubRoute "^images" (const "static")
         compile copyFileCompiler
@@ -31,7 +31,10 @@ main = hakyllWith config $ do
     -- Index.html
     match "index.html" $ do
         route idRoute
-        compile $ htmlPageCompiler
+        compile $ readPageCompiler
+              >>> requireAll "posts/*" (copyFromLastPost "title" "lastposttitle")
+              >>> requireAll "posts/*" (copyFromLastPost "url" "lastposturl")
+              >>> arr applySelf
               >>> applyTemplateCompiler "templates/default.html"
               >>> relativizeUrlsCompiler
 
@@ -70,6 +73,23 @@ main = hakyllWith config $ do
         >>> applyTemplateCompiler "templates/default.html"
         >>> relativizeUrlsCompiler
 
+    -- Posts
+    match "posts/*" $ do
+      route $ setExtension ".html"
+      compile $ pageCompiler
+         >>> applyTemplateCompiler "templates/post.html"
+         >>> applyTemplateCompiler "templates/default.html"
+         >>> relativizeUrlsCompiler
+
+    -- Render posts list
+    match "posts" $ route fancyUrlRoute
+    create "posts" $ constA mempty
+      >>> arr (setField "title" "Blog posts")
+      >>> setFieldPageList recentFirst "templates/postitem.html" "posts" "posts/*"
+      >>> applyTemplateCompiler "templates/posts.html"
+      >>> applyTemplateCompiler "templates/default.html"
+      >>> relativizeUrlsCompiler
+
     -- Read templates
     match "templates/*" $ compile templateCompiler
 
@@ -88,11 +108,17 @@ htmlPageCompiler =
    addDefaultFields >>>
    arr applySelf
 
+-- Sets the fields for "last post" entry in index.html
+copyFromLastPost :: String -> String -> Page String -> [Page String] -> Page String
+copyFromLastPost origFieldName _ currentPage [] =
+  setField origFieldName "none" currentPage
+copyFromLastPost origFieldName fieldName currentPage posts =
+  let fieldVal = getField origFieldName $ head $ recentFirst posts
+  in setField fieldName fieldVal currentPage
+
 -- Config
 config :: HakyllConfiguration
 config = defaultHakyllConfiguration
-  { deployCommand =
-       "rsync --checksum --progress -ave ssh _site/* " ++ to
-  }
-  where
-    to = "sphynx@iveselov.info:iveselov.info/web"
+  { deployCommand = "rsync --checksum --progress -ave ssh _site/* " ++ to
+  } where to = "sphynx@iveselov.info:iveselov.info/web"
+
