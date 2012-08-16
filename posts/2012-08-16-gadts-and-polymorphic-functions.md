@@ -27,7 +27,6 @@ data Type a where
 Here we have a bare representation of certain Haskell types. Now, our
 function for getting defaults may be written like this:
 
-
 ~~~{.haskell}
 def :: Type a -> a
 def t = case t of
@@ -51,11 +50,9 @@ f x = case x of
    [1]    -> 1
 
 ~~~
-
 Here we want to achieve something similar: a polymorphic function which
 have different `a` in its clauses. But this clearly won't work, even if
 left only with the first clause:
-
 
 ~~~{.haskell}
 g :: [a] -> a
@@ -131,6 +128,7 @@ is:
 
 
 ~~~{.haskell}
+g :: a
 g = undefined
 
 ~~~
