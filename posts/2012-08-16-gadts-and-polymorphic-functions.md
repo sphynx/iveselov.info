@@ -50,6 +50,7 @@ f x = case x of
    [1]    -> 1
 
 ~~~
+
 Here we want to achieve something similar: a polymorphic function which
 have different `a` in its clauses. But this clearly won't work, even if
 left only with the first clause:
