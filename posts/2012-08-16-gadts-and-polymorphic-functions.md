@@ -1,5 +1,6 @@
 ---
 title: GADTs and fully polymorphic functions
+description: A post which explores type refinement in GADTs and certain aspects of polymorphic functions
 date: Aug 16, 2012
 ---
 
@@ -118,7 +119,7 @@ knows is that certain interface is supported. So the callee may decide
 that it's perfectly fine to return a String "aaa", as soon as it
 conforms to the Object interface. And the caller might only use Object
 methods to do something with that String. So, we can't implement `h`
-analog in Java, because `Object` does not expose any methods for
+analog in Java, because Object does not expose any methods for
 addition.
 
 This leads to further question: are there any reasonable implementations

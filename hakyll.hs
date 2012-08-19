@@ -93,6 +93,10 @@ main = hakyllWith config $ do
     -- Read templates
     match "templates/*" $ compile templateCompiler
 
+    -- Render RSS feed
+    match "rss.xml" $ route idRoute
+    create "rss.xml" $ requireAll_ "posts/*" >>> renderRss feedConfiguration
+
 
 -- Transforms foo.html into foo/index.html to make possible '/foo'
 -- links (instead of '/foo.html')
@@ -122,3 +126,13 @@ config = defaultHakyllConfiguration
   { deployCommand = "rsync --checksum --progress -ave ssh _site/* " ++ to
   } where to = "sphynx@iveselov.info:iveselov.info/web"
 
+
+-- Feed config
+feedConfiguration :: FeedConfiguration
+feedConfiguration = FeedConfiguration
+    { feedTitle       = "Ivan Veselov - a personal blog"
+    , feedDescription = "Personal blog of Ivan Veselov"
+    , feedAuthorName  = "Ivan N. Veselov"
+    , feedAuthorEmail = "veselov@gmail.com"
+    , feedRoot        = "http://iveselov.info"
+    }
