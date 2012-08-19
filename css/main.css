@@ -51,7 +51,7 @@ footer { text-align: center; margin-top: 2em; font-size: 0.9em; color: gray;}
 dt { font-weight: bold; }
 dd { padding-bottom: 1em; padding-left: 3.4em; font-size: 0.8em; }
 
-header { position: relative; } /* to make photo relative to header borders ;) */
+header { position: relative; } /* to make photo relative to header borders */
 #contacts_list { list-style-type: circle; }
 #photo { position: absolute; top: 1em; right: 2em; }
 .icon { float: left; padding-right: 0.3em; }
@@ -59,20 +59,24 @@ header { position: relative; } /* to make photo relative to header borders ;) */
 
 .note { color: gray; font-size: 0.8em; }
 
-.postdate { color: gray; font-size: 1em; }
-.posttime { color: gray; font-size: 0.8em; }
-.posttitle { margin-top: 1.5em; }
-
-#disqus_thread { margin-top: 5em; }
+/* All posts page with "post items" */
 #rss_icon { float: left; padding-right: 0.3em; margin-top: 0.3em; }
+.post_item_li { margin-left: 0; padding-left: 0; }
+.post_item_date { color: gray; }
+#post_items_list { list-style-type: none; margin-left: 0; padding-left: 0; };
 
-/* Inlined code  */
+/* Individual post page */
+.post_date { color: gray; font-size: 0.8em;}
+.post_title { margin-top: 1.5em; }
+#disqus_thread { margin-top: 5em; }
+
+/* Inlined code */
 code {
     font-family: monospace;
     font-size: 1.1em;
 }
 
-/* Blocks of code  */
+/* Blocks of code */
 pre code {
     font-family: 'Droid Sans Mono', monospace;
     font-size: 0.9em;
