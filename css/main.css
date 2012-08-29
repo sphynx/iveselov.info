@@ -1,8 +1,9 @@
 /* Reset all white-space to 0 for consistency across browsers */
 * { margin: 0px; padding: 0px; }
 
-html { font-size: 62.5%; }
-body { font-family: Ubuntu, Arial, Helvetica, sans-serif; font-size: 1.8em; }
+/* html { font-size: 62.5%; } */
+/* body { font-family: Ubuntu, Arial, Helvetica, sans-serif; font-size: 1.8em; } */
+body { font-family: Ubuntu, Arial, Helvetica, sans-serif; font-size: 18px; }
 h1, h2, h3, h4, h5, h6 { font-family: Ubuntu, sans-serif; }
 
 /* Put some padding back onto our list elements */
@@ -15,7 +16,7 @@ a img { border: 0px; }
 /* No dots around clicked links */
 a, a:active { outline: none; }
 
-/* HTML5 tags */
+/* html5 tags */
 header, section, footer, aside, nav, article, figure { display: block; }
 
 /* Markup */
@@ -60,13 +61,14 @@ header { position: relative; } /* to make photo relative to header borders */
 .note { color: gray; font-size: 0.8em; }
 
 /* All posts page with "post items" */
-#rss_icon { float: left; padding-right: 0.3em; margin-top: 0.3em; }
 .post_item_li { margin-left: 0; padding-left: 0; }
 .post_item_date { color: gray; }
-#post_items_list { list-style-type: none; margin-left: 0; padding-left: 0; };
+#rss_icon { float: left; padding-right: 0.3em; margin-top: 0.3em; }
+#post_items_list { list-style-type: none; margin-left: 0; padding-left: 0; }
+
 
 /* Individual post page */
-.post_date { color: gray; font-size: 0.8em;}
+.post_date { color: gray; font-size: 0.8em; }
 .post_title { margin-top: 1.5em; }
 #disqus_thread { margin-top: 5em; }
 

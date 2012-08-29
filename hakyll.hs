@@ -16,7 +16,7 @@ main = hakyllWith config $ do
     -- Compress CSS
     match "css/*" $ do
         route $ gsubRoute "^css" (const "static")
-        compile compressCssCompiler
+        compile copyFileCompiler
 
     -- Setup favicon
     match "favicon.ico" $ do
