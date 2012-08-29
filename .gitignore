@@ -1,5 +1,6 @@
 _cache/
 _site/
+unpublished/
 *.hi
 *.o
 hakyll
