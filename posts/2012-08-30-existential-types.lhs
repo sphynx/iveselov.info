@@ -84,7 +84,7 @@ abstract, since we could have chosen any type while constructing the
 value, as you have seen in the previous section.
 
 The only thing we know here is that the very same abstract type is
-present in the type of `f` (a quick refresher: `x :: a, f :: x -> a`),
+present in the type of `f` (a quick refresher: `x :: a, f :: a -> Int`),
 so that `f` and `x` are composable: we can apply `f` to `x` to obtain
 an `Int`:
 
