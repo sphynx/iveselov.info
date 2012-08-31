@@ -79,7 +79,7 @@ matching to deconstruct the value:
 use (T x f) = ???
 ~~~
 
-What is the type of `x`? We don't know and can't know: it is hold
+What is the type of `x`? We don't know and can't know: it is held
 abstract, since we could have chosen any type while constructing the
 value, as you have seen in the previous section.
 
@@ -128,7 +128,7 @@ Meet the Counter!
 
 Here we have a constructor with three fields, since our counter
 supports three operations: `new` creates a new counter, `inc`
-increments a counter by one and `get` to get the current counter
+increments a counter by one and `get` retrieves the current counter
 value. Representation type `a` remains hidden and abstract, note that
 we don't have it in the left hand side of the type definition.
 
@@ -196,10 +196,10 @@ get :: c1 -> Int
 Type classes and constrained existentials
 -----------------------------------------
 
-Now let's take a look on the classical first example of existentials.
+Now let's take a look at the classical first example of existentials.
 
 Let's say we want to have a list of values of different types, and
-each of them has an instance of Show, so that we may print them all.
+each of them is an instance of Show, so that we can print them all.
 No problems:
 
 > data ShowBox = forall a. Show a => ShowBox a
@@ -255,10 +255,10 @@ data type.
 
 Hiding the type in such a way, by using an existential type along with
 a constraining type class is a popular approach (it is used for
-example in famous `xmonad` window manager), but this is considered a
-Haskell "antipattern" by some people (because sometimes we can replace
-it with a simpler approach). For more details, see this interesting
-[post][antipattern].
+example in the famous `xmonad` window manager), but this is considered
+a Haskell "antipattern" by some people (because sometimes we can
+replace it with a simpler approach). For more details, see this
+interesting [post][antipattern].
 
 
 Why "forall"?
@@ -275,7 +275,7 @@ data T = C1 (exists a. F a) -- what we wanted to write, not valid Haskell
 data T = forall a. C2 (F a) -- what we wrote in valid Haskell
 ~~~
 
-`F` is some type constructor here, which uses `a`.
+Here, `F` is some type constructor that uses `a`.
 
 It turns out that we can show equivalence of these definitions.
 Curry-Howard isomorphism to the rescue!
@@ -323,8 +323,8 @@ Existentials and currying
 -------------------------
 
 Let me show you one more unexpected and beautiful idea. As you
-probably remember a value of existential type is a pair of term and
-type:
+probably remember a value of existential type is a pair of a term and
+a type:
 
 ~~~
 value of ∃a.F(a) = (Type, term of F(Type))
@@ -336,7 +336,7 @@ But what is the interpretation of universally quantified type ∀a.
 F(a)?
 
 We haven't talked about universally quantified types in this article,
-but a value of such type can be think of as a mapping of any type `a`
+but a value of such type can be thought of as a mapping of any type `a`
 to a term of type `F(a)`, or just a function from type `a` to a value
 of `F(a)` type, i.e.:
 
@@ -344,7 +344,7 @@ of `F(a)` type, i.e.:
 value of ∀a. F(a) = Type -> term of F(Type)
 ~~~
 
-A list might be a good example of universally quantified type:
+A list might be a good example of a universally quantified type:
 
 ~~~
 data List a = Cons a (List a)
@@ -410,7 +410,7 @@ wiki][prime].
 Conclusion
 ----------
 
-Existential types is quite an interesting concept, we may use them to
+Existential types are quite an interesting concept, we may use them to
 abstract away types, hide implementation details and even to simulate
 objects, message passing and something like dynamic dispatch. It would
 be cool to write more about it, but this post has already become too
