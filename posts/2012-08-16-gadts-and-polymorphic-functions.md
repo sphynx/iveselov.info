@@ -8,7 +8,7 @@ Today I've been asked a question about GADTs and the answer turned out
 to be somewhat tricky, so I decided to clarify it for myself in this
 post.
 
-### "Default values" example
+## "Default values" example
 
 Let's start with some contrived example and say we want to have default
 values for certain types. We can use typeclasses for this, but let's
@@ -40,7 +40,7 @@ So far, so good. But wait, the patterns `TBool` and `TInt` have `Type
 a` type, but `a` parameter is different in each pattern! How can they
 coexist? And will this work without GADTs?
 
-### Polymorphic functions
+## Polymorphic functions
 
 Let's try. Assume this, somewhat artificial, code:
 
@@ -135,7 +135,7 @@ g = undefined
 
 ~~~
 
-### Back to GADTs
+## Back to GADTs
 
 Ok, now we have seen that such functions won't compile and understood
 why, but why it works with GADT?
@@ -172,7 +172,7 @@ RHS of the second definition has type `Int`, but only in the context
 when `a` must be `Int`. Therefore, everything fits in place and we
 have a well-typed program.
 
-### Moral
+## Moral
 
 This pattern matching with simultaneous type refinement seems to be one
 of the key features of GADTs. It allows to refine general type variables
