@@ -130,8 +130,10 @@ time { color: gray; }
 .followers { font-weight: normal; }
 
 /* "All posts" page with post items */
-#rss_icon { float: left; padding-right: 0.3em; margin-top: 0.3em; }
-#post_items_list { list-style-type: none; margin-left: 0; padding-left: 0; }
+#rss_icon { float: left; padding-right: 0.5em; margin-top: 0; }
+#posts_header { margin-top: 2em; }
+#all_posts { margin-top: 0em; padding-top: 0.15em; }
+#post_items_list { list-style-type: none; margin-left: 0; padding-left: 0; line-height: 1.6em; }
 .post_item_li { margin-left: 0; padding-left: 0; }
 .post_item_date { color: gray; }
 
