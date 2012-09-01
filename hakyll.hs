@@ -45,8 +45,8 @@ main = hakyllWith config $ do
           >>> unixFilter "asciidoc" ["-"]
           >>> arr readPage
 
-    -- RST pages
-    match "*.rst" $ do
+    -- Markdown pages
+    match "*.md" $ do
         route fancyUrlRoute
         compile $ pageCompiler
               >>> applyTemplateCompiler "templates/default.html"

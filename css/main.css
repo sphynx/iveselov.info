@@ -1,8 +1,52 @@
 /* Reset all white-space to 0 for consistency across browsers */
-* { margin: 0px; padding: 0px; }
+/* * { margin: 0; padding: 0; }*/
 
-/* html { font-size: 62.5%; } */
-/* body { font-family: Ubuntu, Arial, Helvetica, sans-serif; font-size: 1.8em; } */
+/* --------- START OF CSS RESET ---------- */
+/*
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* --------- END OF CSS RESET ---------- */
+
+
+
+/* ----- Major tags tuning ----------- */
+
+/* Main fonts */
 body { font-family: Ubuntu, Arial, Helvetica, sans-serif; font-size: 18px; }
 h1, h2, h3, h4, h5, h6 { font-family: Ubuntu, sans-serif; }
 
@@ -11,66 +55,44 @@ ul, ol { margin-left: 10px; }
 li { margin-left: 10px; padding-left: 10px; }
 
 /* Bye bye ugly blue border */
-a img { border: 0px; }
+a img { border: 0; }
 
 /* No dots around clicked links */
-a, a:active { outline: none; }
-
-/* html5 tags */
-header, section, footer, aside, nav, article, figure { display: block; }
+a:active { outline: none; }
 
 /* Markup */
 body {
-  line-height: 1.5;
   max-width: 40em;
   margin: 0 auto;
 }
 
+/* Links */
 a { color: #055580; }
 a:hover { text-decoration: none; }
-time { color: grey; }
 
+/* H{1,2} and links in them */
 h1 { font-size: 1.7em; }
 h2 { font-size: 1.3em; }
 h1 a, h2 a { text-decoration: none; }
 h1 a:hover, h2 a:hover { text-decoration: underline; }
 h1, h2 { margin-bottom: 0.5em; }
-h2 { margin-top: 0.5em; }
+h2 { margin-top: 2em; }
+h3 { margin-top: 1em; }
+h1, h2, h3, h4 { font-weight: bold; }
 
-p { margin: 1em 0; line-height: 1.4em; }
+/* Paragraphs */
+p { margin-bottom: 1em; margin-top: 1em; line-height: 1.6em; }
 
 /* Header/Footer */
+/* note: header position is relative to make photo relative to header borders */
+/* header { padding: 1em 0; height: 150px; position: relative; } */
 header { padding: 1em 0; height: 150px; }
-footer { text-align: center; margin-top: 2em; font-size: 0.9em; color: gray;}
+footer { text-align: center; margin-top: 2em; font-size: 0.9em; color: gray; }
 
-/* Name/description */
-#myname a { color: #000000; }
-#myname { font-size: 2em; margin-top: 0.5em; margin-bottom: 0em; }
-#description { color: gray; font-size: 0.7em; }
-
-/* Definition lists */
+/* Definition lists (actively used on the main page) */
+dl { line-height: 1.5; }
 dt { font-weight: bold; }
 dd { padding-bottom: 1em; padding-left: 3.4em; font-size: 0.8em; }
-
-header { position: relative; } /* to make photo relative to header borders */
-#contacts_list { list-style-type: circle; }
-#photo { position: absolute; top: 1em; right: 2em; }
-.icon { float: left; padding-right: 0.3em; }
-.contact-name { font-weight: bold; }
-
-.note { color: gray; font-size: 0.8em; }
-
-/* All posts page with "post items" */
-.post_item_li { margin-left: 0; padding-left: 0; }
-.post_item_date { color: gray; }
-#rss_icon { float: left; padding-right: 0.3em; margin-top: 0.3em; }
-#post_items_list { list-style-type: none; margin-left: 0; padding-left: 0; }
-
-
-/* Individual post page */
-.post_date { color: gray; font-size: 0.8em; }
-.post_title { margin-top: 1.5em; }
-#disqus_thread { margin-top: 5em; }
 
 /* Inlined code */
 code {
@@ -89,3 +111,34 @@ pre code {
     background-color: rgb(250, 250, 250);
     border: 1px solid rgb(200, 200, 200);
 }
+
+/* Miscellaneous tags */
+time { color: gray; }
+
+
+/* ----- Particular elements tuning ----------- */
+
+/* Main page */
+#myname a { color: #000000; }
+#myname { font-size: 2.2em; font-weight: normal; margin-top: 0.5em; margin-bottom: 0; }
+#description { font-size: 0.8em; font-weight: normal; color: gray; margin-top: 0.3em; }
+#contacts_list { list-style-type: circle; }
+#photo { float: left; margin-right: 1.5em; }
+.icon { float: left; padding-right: 0.3em; }
+#twitter_readers { font-weight: normal; }
+.contact_name { font-weight: bold; }
+.followers { font-weight: normal; }
+
+/* "All posts" page with post items */
+#rss_icon { float: left; padding-right: 0.3em; margin-top: 0.3em; }
+#post_items_list { list-style-type: none; margin-left: 0; padding-left: 0; }
+.post_item_li { margin-left: 0; padding-left: 0; }
+.post_item_date { color: gray; }
+
+/* Styles for individual post pages */
+#disqus_thread { margin-top: 5em; }
+.post_title { margin-top: 1.5em; margin-bottom: 0.2em; }
+.post_date { color: gray; font-size: 0.8em; margin-bottom: 2em; }
+
+/* General classes, which are used everywhere */
+.note { color: gray; font-size: 0.8em; }

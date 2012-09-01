@@ -2,21 +2,21 @@
 title: Ivan Veselov
 ---
 
+<section>
 <h2 id="online-presence">Social</h2>
 
 <dl>
   <dt>
     <a href="http://twitter.com/dying_sphynx" title="Twitter"><img src="/static/twitter_32.png" class="icon"/></a>
-    <a href="http://twitter.com/dying_sphynx" title="Twitter">Twitter</a>
-    (<span id="twitter-readers">X</span> followers)
+    <a href="http://twitter.com/dying_sphynx" title="Twitter">Twitter</a><span class="followers"> (</span><span id="twitter_readers">X</span><span class="followers"> followers)</span>
   </dt>
-  <dd><span id="last-tweet">last tweet is loading...</span></dd>
+  <dd><span id="last_tweet">last tweet is loading...</span></dd>
 
   <dt>
     <a href="http://feeds.feedburner.com/Veselov" title="Feed"><img src="/static/rss32.png" class="icon"/></a>
     <a href="/posts" title="Technical blog">Technical blog</a></dt>
   <dd>Last post:
-    <span id="last-post">
+    <span id="last_post">
       <a href="$lastposturl$">$lastposttitle$</a>
     </span>
   </dd>
@@ -25,7 +25,7 @@ title: Ivan Veselov
     <a href="http://dying-sphynx.livejournal.com" title="Live Journal"><img src="/static/livejournal_32.png" class="icon"/></a>
     <a href="http://dying-sphynx.livejournal.com" title="Live Journal">LiveJournal</a></dt>
   <dd>Last post:
-    <span id="last-post">
+    <span>
       <a href="http://dying-sphynx.livejournal.com/82111.html">Копакабана. Боливия</a>
     </span>
   </dd>
@@ -54,7 +54,9 @@ title: Ivan Veselov
   <dd>I'm an avid chess player, mostly playing on FICS server. You can see a list of my recent games there.</dd>
 
 </dl>
+</section>
 
+<section>
 <h2 id="about">About</h2>
 
 <dl>
@@ -70,7 +72,9 @@ title: Ivan Veselov
   <dt><a href="/pages" title="Pages">Pages</a></dt>
   <dd>A set of pages/articles/experiments</dd>
 </dl>
+</section>
 
+<section>
 <h2 id="projects">Projects</h2>
 
 <dl>
@@ -92,23 +96,26 @@ title: Ivan Veselov
   <dt><a href="https://github.com/sphynx/" title="Github">Git repositories on github.com</a></dt>
   <dd>Various small projects</dd>
 </dl>
+</section>
 
+<section>
 <h2 id="contacts">Contacts</h2>
 
 <ul id="contacts_list">
-  <li><span class="contact-name">E-mail:</span> veselov@gmail.com</li>
-  <li><span class="contact-name">Jabber:</span> veselov@gmail.com</li>
-  <li><span class="contact-name">Skype:</span> dying_sphynx</li>
-  <li><span class="contact-name">Location:</span> Kyiv, Ukraine<br/>
+  <li><span class="contact_name">E-mail:</span> veselov@gmail.com</li>
+  <li><span class="contact_name">Jabber:</span> veselov@gmail.com</li>
+  <li><span class="contact_name">Skype:</span> dying_sphynx</li>
+  <li><span class="contact_name">Location:</span> Kyiv, Ukraine<br/>
   </li>
 </ul>
+</section>
 
 <script>
 $.getJSON("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=dying_sphynx&count=2&callback=?",
           function (tweets) {
               var date = new Date(tweets[0].created_at);
               var url = "http://twitter.com/dying_sphynx/status/" + tweets[0].id;
-              var container = $("#last-tweet");
+              var container = $("#last_tweet");
               container.html($("<time>")
                                .attr("datetime", date.toISOString())
                                .html(date.toDateString().substr(3)));
@@ -118,7 +125,7 @@ $.getJSON("http://api.twitter.com/1/statuses/user_timeline.json?screen_name=dyin
 
 $.getJSON("http://api.twitter.com/1/users/show.json?screen_name=dying_sphynx&callback=?",
           function (info) {
-              $("#twitter-readers").text(info.followers_count);
+              $("#twitter_readers").text(info.followers_count);
           });
 
 /* commented as it has ceased to work for now. TODO: figure out what's
