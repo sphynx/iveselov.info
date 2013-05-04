@@ -1,9 +1,15 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# OPTIONS_GHC -Wall #-}
 
-import Control.Arrow
+import Control.Applicative
+import Data.List
+import Data.Maybe
 import Data.Monoid
-import Hakyll
 import System.FilePath
+
+import qualified Data.Map as M
+
+import Hakyll
 
 main :: IO ()
 main = hakyllWith config $ do
@@ -31,101 +37,99 @@ main = hakyllWith config $ do
     -- Index.html
     match "index.html" $ do
         route idRoute
-        compile $ readPageCompiler
-              >>> requireAll "posts/*" (copyFromLastPost "title" "lastposttitle")
-              >>> requireAll "posts/*" (copyFromLastPost "url" "lastposturl")
-              >>> arr applySelf
-              >>> applyTemplateCompiler "templates/default.html"
-              >>> relativizeUrlsCompiler
+        compile $ getResourceBody
+          >>= applyAsTemplate lastPostContext
+          >>= loadAndApplyTemplate "templates/default.html" defaultContext
+          >>= relativizeUrls
 
     -- CV in asciidoc, run "asciidoc" utility to produce CV
     match "cv.asciidoc" $ do
         route fancyUrlRoute
-        compile $ getResourceString
-          >>> unixFilter "asciidoc" ["-"]
-          >>> arr readPage
+        compile $ getResourceString >>= withItemBody (unixFilter "asciidoc" ["-"])
 
     -- Markdown pages
     match "*.md" $ do
         route fancyUrlRoute
-        compile $ pageCompiler
-              >>> applyTemplateCompiler "templates/default.html"
-              >>> relativizeUrlsCompiler
+        compile $ pandocCompiler
+          >>= loadAndApplyTemplate "templates/default.html" defaultContext
+          >>= relativizeUrls
 
     -- Pages index
-    match "pages" $ route fancyUrlRoute
-    create "pages" $ constA mempty
-      >>> arr (setField "title" "Pages and experiments")
-      >>> setFieldPageList recentFirst "templates/pageitem.html" "pages" "pages/*"
-      >>> applyTemplateCompiler "templates/pages.html"
-      >>> applyTemplateCompiler "templates/default.html"
-      >>> relativizeUrlsCompiler
+    create ["pages"] $ do
+      route fancyUrlRoute
+      compile $ do
+        pages <- recentFirst =<< loadAll "pages/*"
+        itemTpl <- loadBody "templates/pageitem.html"
+        list <- applyTemplateList itemTpl defaultContext pages
+        let pagesCtx =  constField "title" "Pages and experiments"
+                     <> constField "pages" list
+                     <> defaultContext
+        makeItem list
+          >>= loadAndApplyTemplate "templates/pages.html" pagesCtx
+          >>= loadAndApplyTemplate "templates/default.html" pagesCtx
+          >>= relativizeUrls
 
     -- xmonad article is shown as-is, without template decoration
     match "pages/xmonad.html" $ do
       route idRoute
-      compile $ readPageCompiler >>> addDefaultFields
+      compile getResourceBody
 
     -- Other html pages
     match "pages/*.html" $ do
       route idRoute
       compile $ htmlPageCompiler
-        >>> applyTemplateCompiler "templates/default.html"
-        >>> relativizeUrlsCompiler
+        >>= loadAndApplyTemplate "templates/default.html" defaultContext
+        >>= relativizeUrls
 
     -- Posts
     match "posts/*" $ do
       route $ setExtension ".html"
-      compile $ pageCompiler
-         >>> applyTemplateCompiler "templates/post.html"
-         >>> applyTemplateCompiler "templates/default.html"
-         >>> relativizeUrlsCompiler
+      compile $ pandocCompiler
+         >>= loadAndApplyTemplate "templates/post.html" defaultContext
+         >>= loadAndApplyTemplate "templates/default.html" defaultContext
+         >>= relativizeUrls
 
     -- Render posts list
-    match "posts" $ route fancyUrlRoute
-    create "posts" $ constA mempty
-      >>> arr (setField "title" "Blog posts")
-      >>> setFieldPageList recentFirst "templates/postitem.html" "posts" "posts/*"
-      >>> applyTemplateCompiler "templates/posts.html"
-      >>> applyTemplateCompiler "templates/default.html"
-      >>> relativizeUrlsCompiler
+    create ["posts"] $ do
+      route fancyUrlRoute
+      compile $ do
+        pages <- recentFirst =<< loadAll "posts/*"
+        itemTpl <- loadBody "templates/postitem.html"
+        list <- applyTemplateList itemTpl defaultContext pages
+        let postsCtx =  constField "title" "Blog posts"
+                     <> constField "posts" list
+                     <> defaultContext
+        makeItem list
+          >>= loadAndApplyTemplate "templates/posts.html" postsCtx
+          >>= loadAndApplyTemplate "templates/default.html" postsCtx
+          >>= relativizeUrls
 
     -- Read templates
     match "templates/*" $ compile templateCompiler
 
     -- Render RSS feed
-    match "rss.xml" $ route idRoute
-    create "rss.xml" $ requireAll_ "posts/*" >>> renderRss feedConfiguration
-
+    create ["rss.xml"] $ do
+      route idRoute
+      compile $ loadAll "posts/*"
+        >>= renderRss feedConfiguration defaultContext
 
 -- Transforms foo.html into foo/index.html to make possible '/foo'
 -- links (instead of '/foo.html')
 fancyUrlRoute :: Routes
-fancyUrlRoute = customRoute $ (++ "/index.html") .
-                dropExtension .
-                identifierPath
+fancyUrlRoute = customRoute $
+    (++ "/index.html")
+  . dropExtension
+  . toFilePath
 
 -- Compiles HTML pages without invoking Pandoc on them
-htmlPageCompiler :: Compiler Resource (Page String)
-htmlPageCompiler =
-   readPageCompiler >>>
-   addDefaultFields >>>
-   arr applySelf
-
--- Sets the fields for "last post" entry in index.html
-copyFromLastPost :: String -> String -> Page String -> [Page String] -> Page String
-copyFromLastPost origFieldName _ currentPage [] =
-  setField origFieldName "none" currentPage
-copyFromLastPost origFieldName fieldName currentPage posts =
-  let fieldVal = getField origFieldName $ head $ recentFirst posts
-  in setField fieldName fieldVal currentPage
+htmlPageCompiler :: Compiler (Item String)
+htmlPageCompiler = getResourceBody >>= applyAsTemplate defaultContext
 
 -- Config
-config :: HakyllConfiguration
-config = defaultHakyllConfiguration
+config :: Configuration
+config = defaultConfiguration
   { deployCommand = "rsync --checksum --progress -ave ssh _site/* " ++ to
   } where to = "sphynx@iveselov.info:iveselov.info/web"
-
 
 -- Feed config
 feedConfiguration :: FeedConfiguration
@@ -136,3 +140,28 @@ feedConfiguration = FeedConfiguration
     , feedAuthorEmail = "veselov@gmail.com"
     , feedRoot        = "http://iveselov.info"
     }
+
+lastPostContext :: Context a
+lastPostContext = Context $ \key _ -> case key of
+  "lastposttitle" -> lastPostTitle
+  "lastposturl"   -> lastPostUrl
+  _               -> empty
+  where
+
+    lastPost :: Compiler Identifier
+    lastPost = do
+      postIds <- (reverse . sort) <$> getMatches "posts/*"
+      case postIds of
+        [] -> empty
+        lastPostId : _ -> return lastPostId
+
+    lastPostTitle :: Compiler String
+    lastPostTitle = do
+      metadata <- getMetadata =<< lastPost
+      return $ fromMaybe empty $ M.lookup "title" metadata
+
+    lastPostUrl :: Compiler String
+    lastPostUrl = do
+      p <- lastPost
+      maybe empty toUrl <$> getRoute p
+
