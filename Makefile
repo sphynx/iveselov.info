@@ -1,4 +1,4 @@
-all: preview
+all: watch
 
 build: hakyll
 	./hakyll build
@@ -6,15 +6,16 @@ build: hakyll
 rebuild: hakyll
 	./hakyll rebuild
 
-preview: build
-	./hakyll preview
+watch: build
+	./hakyll watch
 
 deploy: rebuild
 	./hakyll deploy
 
-hakyll: hakyll.hs
-	ghc hakyll.hs
+hakyll: HakyllCmd.hs
+	ghc -main-is HakyllCmd.main HakyllCmd.hs -o hakyll
 
 clean:
 	./hakyll clean
-	rm -v hakyll{,.o,.hi}
+	rm hakyll
+	rm -v HakyllCmd{.o,.hi}

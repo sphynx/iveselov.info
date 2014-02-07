@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
-{-# OPTIONS_GHC -Wall #-}
+
+module HakyllCmd where
 
 import Control.Applicative
 import Data.List
@@ -129,7 +130,7 @@ htmlPageCompiler = getResourceBody >>= applyAsTemplate defaultContext
 config :: Configuration
 config = defaultConfiguration
   { deployCommand = "rsync --checksum --progress -ave ssh _site/* " ++ to
-  } where to = "sphynx@iveselov.info:iveselov.info/web"
+  } where to = "sphynx@horna.org.ua:/srv/iveselov.info"
 
 -- Feed config
 feedConfiguration :: FeedConfiguration
@@ -155,13 +156,13 @@ lastPostContext = Context $ \key _ -> case key of
         [] -> empty
         lastPostId : _ -> return lastPostId
 
-    lastPostTitle :: Compiler String
+    lastPostTitle :: Compiler ContextField
     lastPostTitle = do
       metadata <- getMetadata =<< lastPost
-      return $ fromMaybe empty $ M.lookup "title" metadata
+      return $ StringField $ fromMaybe empty $ M.lookup "title" metadata
 
-    lastPostUrl :: Compiler String
+    lastPostUrl :: Compiler ContextField
     lastPostUrl = do
       p <- lastPost
-      maybe empty toUrl <$> getRoute p
+      (StringField . maybe empty toUrl) <$> getRoute p
 
