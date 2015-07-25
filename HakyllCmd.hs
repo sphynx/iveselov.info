@@ -130,7 +130,7 @@ htmlPageCompiler = getResourceBody >>= applyAsTemplate defaultContext
 config :: Configuration
 config = defaultConfiguration
   { deployCommand = "rsync --checksum --progress -ave ssh _site/* " ++ to
-  } where to = "sphynx@horna.org.ua:/srv/iveselov.info"
+  } where to = "sphynx@iveselov.info:/srv/iveselov.info"
 
 -- Feed config
 feedConfiguration :: FeedConfiguration
