@@ -8,23 +8,24 @@ phone: +380 93 5480384
 Professional Summary
 --------------------
 
-A progressive developer interested in functional programming,
-algorithms design and analysis, parsing techniques and computer
-science in general. Has the knowledge of different programming
-paradigms, practical functional programming experience in Haskell. Has
-developed enterprise applications using J2EE architecture, various
-transformation systems and rich internet applications based on Flex
-technology. Eager to learn about new technologies and approaches, is
-productive in research tasks requiring an intellectual effort.
+I am a progressive developer interested in functional programming,
+algorithms design and analysis and computer science in general. I have
+knowledge of different programming paradigms, practical functional
+programming experience in Haskell. I have developed infrastructure for
+domain specific languages in Haskell, enterprise applications using
+J2EE architecture, various transformation systems and rich internet
+applications based on Flex technology. Eager to learn about new
+technologies and approaches, productive in research tasks requiring an
+intellectual effort.
 
 Personal Information
 --------------------
 
 Date of birth: April 23th, 1984
 
-Marital status: unmarried, no children
+Marital status: married, no children
 
-Languages: Russian -- native, Ukrainian -- excellent, English --
+Languages: Russian -- native, Ukrainian -- fluent, English --
 advanced (IELTS certificate: 8.0 / 9).
 
 Technical Skills
@@ -32,37 +33,34 @@ Technical Skills
 
 .Programming Languages
 
-Haskell, Java
+Haskell, Java, JavaScript
 
 .Development Tools
 
 - Haskell: GHC, Parsec, QuickCheck
-- Java: Eclipse, Sun JDK, Ant, JUnit
 - UNIX tools and editors: shell scripting, standard POSIX tools,
   Emacs
-- J2EE application servers: JBoss
+- Java: Eclipse, Sun JDK, Ant, JUnit
 - Parsing tools: ANTLR, JavaCC, Parsec
-- Source transformation tool: TXL
-- Version control: Subversion, Mercurial, Git, Perforce
+- Version control: Git, Perforce
 
 .Software Technologies
 
 - J2EE: JSP, Servlets, EJB, Struts
 - Parsing: ANTLR, Combinator-based parsing (Parsec, UU parsing lib)
-- Data access: SQL, ORM (Hibernate)
+- Data access: SQL
 - XML: XPath, XML Schema, XSLT
 - GUI: Adobe Flex
 
 .Operating Systems
 
-Linux, Windows
+Linux, Windows, MacOS X
 
 .Miscellaneous
 
 - Object oriented programming
 - Theoretical aspects of functional programming
 - Algorithms analysis/design
-- Design patterns (GOF)
 - Basics of finance, derivatives
 
 Work Experience
