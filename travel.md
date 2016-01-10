@@ -23,8 +23,9 @@ work in progress! :)
 
 The image has been generated using [TravelMapper]
 
-Visited countries: 31 (recent first order):
+Visited countries: 32 (recent first order):
 
+- Vatican
 - Macedonia
 - Italy
 - Portugal
