@@ -1,6 +1,6 @@
 ---
-title: Заметки по SPQR. Глава первая.
-description: Заметки по книге "SPQR. A history of Ancient Rome". Глава первая: Цицерон против Катилины
+title: Заметки по SPQR. Заговор Катилины.
+description: Заметки по книге "SPQR. A history of Ancient Rome". Глава первая: Цицерон против Катилины.
 date: Jan 24, 2016
 ---
 
