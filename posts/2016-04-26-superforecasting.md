@@ -1,5 +1,5 @@
 ---
-title: Обзор книги "Superforecasting: The art and science of prediction".
+title: 'Обзор книги "Superforecasting: The art and science of prediction".'
 description: Насколько хорошо люди могут предсказывать результаты важных глобальных событий, как это измерить и чему можно научиться у тех, кто предсказывает лучше.
 date: Apr 26, 2016
 ---

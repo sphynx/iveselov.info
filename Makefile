@@ -13,7 +13,7 @@ deploy: rebuild
 	./hakyll deploy
 
 hakyll: HakyllCmd.hs
-	ghc -main-is HakyllCmd.main HakyllCmd.hs -o hakyll
+	stack exec ghc -- -main-is HakyllCmd.main HakyllCmd.hs -o hakyll
 
 clean:
 	./hakyll clean

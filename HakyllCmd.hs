@@ -143,7 +143,7 @@ feedConfiguration = FeedConfiguration
     }
 
 lastPostContext :: Context a
-lastPostContext = Context $ \key _ -> case key of
+lastPostContext = Context $ \key _ _ -> case key of
   "lastposttitle" -> lastPostTitle
   "lastposturl"   -> lastPostUrl
   _               -> empty
@@ -159,7 +159,7 @@ lastPostContext = Context $ \key _ -> case key of
     lastPostTitle :: Compiler ContextField
     lastPostTitle = do
       metadata <- getMetadata =<< lastPost
-      return $ StringField $ fromMaybe empty $ M.lookup "title" metadata
+      return $ StringField $ fromMaybe empty $ lookupString "title" metadata
 
     lastPostUrl :: Compiler ContextField
     lastPostUrl = do

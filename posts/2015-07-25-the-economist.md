@@ -1,5 +1,5 @@
 ---
-title: "The Economist" – новости и аналитика.
+title: '"The Economist" – новости и аналитика.'
 description: My impressions of "The Economist"
 date: Jul 25, 2015
 ---
