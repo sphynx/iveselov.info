@@ -71,5 +71,5 @@ Visited countries: 44
 
 [CouchSurfing]: http://couchsurfing.org
 [TravelMapper]: http://iveselov.info/travelmapper/
-[map] : http://chart.apis.google.com/chart?cht=map:fixed=-70,-180,80,180&chs=600x400&chf=bg,s,336699&chco=d0d0d0,cc0000&chld=CL|AR|BO|PE|EC|BR|MA|BY|UA|RU|SE|NO|IS|GB|US|ID|CN|IR|IN|MM|SG|ES|FR|AT|CH|IT|VA|TR|GE|IL|JO|NP|PL|LU|DE|PT|DK|LT|CZ|NL|BE|MK|HR|MD&chd=s:99999999999999999999999999999999999999999999
+[map]: http://chart.apis.google.com/chart?cht=map:fixed=-70,-180,80,180&chs=600x400&chf=bg,s,336699&chco=d0d0d0,cc0000&chld=CL|AR|BO|PE|EC|BR|MA|BY|UA|RU|SE|NO|IS|GB|US|ID|CN|IR|IN|MM|SG|ES|FR|AT|CH|IT|VA|TR|GE|IL|JO|NP|PL|LU|DE|PT|DK|LT|CZ|NL|BE|MK|HR|MD&chd=s:99999999999999999999999999999999999999999999
 
